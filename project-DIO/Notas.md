@@ -100,6 +100,7 @@ char primeiraLetra = saudacao.charAt(0);
 String parte = saudacao.substring(0, 3);
 String maiuscula = saudacao.toUpperCase();
 ```
+
 ## Modo Debug
 
 O modo debug é uma ferramenta essencial para desenvolvedores, pois permite a execução passo a passo do código, facilitando a identificação e correção de erros. No modo debug, você pode:
@@ -342,3 +343,101 @@ No exemplo acima, a variável `resultado` será `true` porque ambas as condiçõ
 | **Bitwise**            | Realizam operações em nível de bit.                                       |
 | **Shift**              | Deslocam bits para a esquerda ou direita.                                 |
 | **Instanceof**         | Verifica se um objeto é uma instância de uma classe específica.           |
+
+## Métodos em Java
+
+Os métodos em Java são blocos de código que realizam uma tarefa específica e podem ser chamados para executar essa tarefa. Eles ajudam a organizar e reutilizar o código, tornando-o mais modular e legível.
+
+### Estrutura de um Método
+
+Um método em Java é composto por:
+
+1. **Modificadores de Acesso**: Definem a visibilidade do método (`public`, `private`, `protected`).
+2. **Tipo de Retorno**: O tipo de dado que o método retorna (`void` se não retornar nada).
+3. **Nome do Método**: Deve ser um identificador válido.
+4. **Parâmetros**: Lista de parâmetros que o método aceita, entre parênteses.
+5. **Corpo do Método**: O bloco de código que define o que o método faz, entre chaves `{}`.
+
+### Exemplo de Método
+
+```java
+public class Calculadora {
+    /**
+     * Este método calcula a soma de dois números inteiros.
+     *
+     * @param a o primeiro número inteiro
+     * @param b o segundo número inteiro
+     * @return a soma dos dois números inteiros
+     * @throws IllegalArgumentException se qualquer um dos parâmetros for nulo
+     */
+    public int soma(int a, int b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Os parâmetros não podem ser nulos");
+        }
+        return a + b;
+    }
+}
+```
+
+### Chamando um Método
+
+Para chamar um método, você usa o nome do método seguido de parênteses, passando os argumentos necessários:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.soma(5, 3);
+        System.out.println("Resultado: " + resultado);
+    }
+}
+```
+
+### Tipos de Métodos
+
+- **Métodos de Instância**: Pertencem a uma instância da classe e podem acessar variáveis de instância.
+- **Métodos Estáticos**: Pertencem à classe e não podem acessar variáveis de instância diretamente.
+
+### Sobrecarga de Métodos
+
+A sobrecarga de métodos permite definir vários métodos com o mesmo nome, mas com diferentes listas de parâmetros:
+
+```java
+public class Calculadora {
+    public int soma(int a, int b) {
+        return a + b;
+    }
+
+    public double soma(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+### Documentação de Métodos
+
+Usar comentários Javadoc para documentar métodos é uma prática recomendada. Eles descrevem o propósito do método, seus parâmetros, valor de retorno e exceções lançadas.
+
+```java
+/**
+ * Este método calcula a soma de dois números inteiros.
+ *
+ * @param a o primeiro número inteiro
+ * @param b o segundo número inteiro
+ * @return a soma dos dois números inteiros
+ * @throws IllegalArgumentException se qualquer um dos parâmetros for nulo
+ */
+public int soma(int a, int b) {
+    if (a == null || b == null) {
+        throw new IllegalArgumentException("Os parâmetros não podem ser nulos");
+    }
+    return a + b;
+}
+```
+
+### Boas Práticas
+
+- **Nomes Significativos**: Use nomes de métodos que descrevam claramente o que eles fazem.
+- **Coesão**: Cada método deve realizar uma única tarefa ou um grupo de tarefas relacionadas.
+- **Documentação**: Documente seus métodos usando Javadoc para facilitar a manutenção e o entendimento do código.
+
