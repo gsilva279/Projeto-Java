@@ -1,0 +1,83 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "EstruturasRepeticao",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.EstruturasRepeticao",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "ControleFluxo",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.ControleFluxo",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "AbautMe",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.AbautMe",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "MinhaClass",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.MinhaClass",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Operadores",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.Operadores",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "ResultadoMedia",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.ResultadoMedia",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "TerminalClass",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.TerminalClass",
+            "projectName": "project-DIO_5323cb20",
+            "args": [
+                "José",
+                "Gilvanilson",
+                "23",
+                "1.70"
+            ]
+        },
+        {
+            "type": "java",
+            "name": "TiposVariaveis",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.TiposVariaveis",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Usuario",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.exercicioMetodos.Usuario",
+            "projectName": "project-DIO_5323cb20"
+        }
+    ]
+}

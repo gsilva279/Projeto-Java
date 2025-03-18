@@ -345,6 +345,151 @@ No exemplo acima, a variável `resultado` será `true` porque ambas as condiçõ
 | **Instanceof**         | Verifica se um objeto é uma instância de uma classe específica.           |
 
 ## Métodos em Java
+Os métodos em Java são blocos de código que realizam uma tarefa específica e podem ser chamados para executar essa tarefa. Eles ajudam a organizar e reutilizar o código, tornando-o mais modular e legível.
+
+### Estrutura de um Método
+
+Um método em Java é composto por:
+
+1. **Modificadores de Acesso**: Definem a visibilidade do método (`public`, `private`, `protected`).
+2. **Tipo de Retorno**: O tipo de dado que o método retorna (`void` se não retornar nada).
+3. **Nome do Método**: Deve ser um identificador válido.
+4. **Parâmetros**: Lista de parâmetros que o método aceita, entre parênteses.
+5. **Corpo do Método**: O bloco de código que define o que o método faz, entre chaves `{}`.
+
+### Exemplo de Método
+
+```java
+public class Calculadora {
+    /**
+     * Este método calcula a soma de dois números inteiros.
+     *
+     * @param a o primeiro número inteiro
+     * @param b o segundo número inteiro
+     * @return a soma dos dois números inteiros
+     * @throws IllegalArgumentException se qualquer um dos parâmetros for nulo
+     */
+    public int soma(int a, int b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Os parâmetros não podem ser nulos");
+        }
+        return a + b;
+    }
+}
+```
+
+### Chamando um Método
+
+Para chamar um método, você usa o nome do método seguido de parênteses, passando os argumentos necessários:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.soma(5, 3);
+        System.out.println("Resultado: " + resultado);
+    }
+}
+```
+
+### Tipos de Métodos
+
+- **Métodos de Instância**: Pertencem a uma instância da classe e podem acessar variáveis de instância.
+- **Métodos Estáticos**: Pertencem à classe e não podem acessar variáveis de instância diretamente.
+
+### Sobrecarga de Métodos
+
+A sobrecarga de métodos permite definir vários métodos com o mesmo nome, mas com diferentes listas de parâmetros:
+
+```java
+public class Calculadora {
+    public int soma(int a, int b) {
+        return a + b;
+    }
+
+    public double soma(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+### Documentação de Métodos
+
+Usar comentários Javadoc para documentar métodos é uma prática recomendada. Eles descrevem o propósito do método, seus parâmetros, valor de retorno e exceções lançadas.
+
+```java
+/**
+ * Este método calcula a soma de dois números inteiros.
+ *
+ * @param a o primeiro número inteiro
+ * @param b o segundo número inteiro
+ * @return a soma dos dois números inteiros
+ * @throws IllegalArgumentException se qualquer um dos parâmetros for nulo
+ */
+public int soma(int a, int b) {
+    if (a == null || b == null) {
+        throw new IllegalArgumentException("Os parâmetros não podem ser nulos");
+    }
+    return a + b;
+}
+```
+
+### Visibilidade dos Métodos
+
+Os modificadores de acesso controlam a visibilidade dos métodos:
+
+- **public**: O método pode ser acessado de qualquer lugar.
+- **private**: O método só pode ser acessado dentro da própria classe.
+- **protected**: O método pode ser acessado dentro da própria classe, por subclasses e por classes do mesmo pacote.
+- **default** (sem modificador): O método pode ser acessado por classes do mesmo pacote.
+
+### Exceções
+
+Exceções são eventos que ocorrem durante a execução de um programa e interrompem o fluxo normal de instruções. Em Java, você pode usar exceções para tratar erros e outras condições excepcionais.
+
+#### Lançando Exceções
+
+Você pode lançar uma exceção usando a palavra-chave `throw`:
+
+```java
+public void verificaIdade(int idade) {
+    if (idade < 18) {
+        throw new IllegalArgumentException("Idade deve ser maior ou igual a 18");
+    }
+}
+```
+
+#### Tratando Exceções
+
+Você pode tratar exceções usando blocos `try-catch`:
+
+```java
+public void exemploTratamento() {
+    try {
+        int resultado = 10 / 0;
+    } catch (ArithmeticException e) {
+        System.out.println("Erro: Divisão por zero");
+    }
+}
+```
+
+#### Declaração de Exceções
+
+Métodos podem declarar que lançam exceções usando a cláusula `throws`:
+
+```java
+public void metodoQueLancaExcecao() throws IOException {
+    // código que pode lançar IOException
+}
+```
+
+### Boas Práticas
+
+- **Nomes Significativos**: Use nomes de métodos que descrevam claramente o que eles fazem.
+- **Coesão**: Cada método deve realizar uma única tarefa ou um grupo de tarefas relacionadas.
+- **Documentação**: Documente seus métodos usando Javadoc para facilitar a manutenção e o entendimento do código.
+- **Tratamento de Exceções**: Sempre trate exceções de maneira adequada para evitar que o programa falhe inesperadamente.
+
 
 Os métodos em Java são blocos de código que realizam uma tarefa específica e podem ser chamados para executar essa tarefa. Eles ajudam a organizar e reutilizar o código, tornando-o mais modular e legível.
 
@@ -440,4 +585,475 @@ public int soma(int a, int b) {
 - **Nomes Significativos**: Use nomes de métodos que descrevam claramente o que eles fazem.
 - **Coesão**: Cada método deve realizar uma única tarefa ou um grupo de tarefas relacionadas.
 - **Documentação**: Documente seus métodos usando Javadoc para facilitar a manutenção e o entendimento do código.
+### Gerando Documentação com Javadoc
 
+Para gerar a documentação de um arquivo Java usando o Javadoc no terminal, siga os passos abaixo:
+
+1. **Abra o Terminal**: Navegue até o diretório onde seu arquivo Java está localizado.
+
+2. **Comando Javadoc**: Use o comando `javadoc` seguido do nome do arquivo Java. Por exemplo, para gerar a documentação do arquivo `MinhaClass.java`, você pode usar o seguinte comando:
+
+    ```sh
+    javadoc MinhaClass.java
+    ```
+
+3. **Especificar Diretório de Saída**: Você pode especificar um diretório de saída para os arquivos HTML gerados usando a opção `-d`. Por exemplo:
+
+    ```sh
+    javadoc -d docs MinhaClass.java
+    ```
+
+    Isso criará uma pasta chamada `docs` contendo a documentação gerada.
+
+4. **Gerar Documentação para um Pacote**: Para gerar a documentação de todos os arquivos em um pacote, você pode usar o comando:
+
+    ```sh
+    javadoc -d docs pacote/*.java
+    ```
+
+5. **Incluir Comentários Javadoc**: Certifique-se de que seus arquivos Java contenham comentários Javadoc adequados para que a documentação gerada seja útil e informativa.
+
+### Exemplo Completo
+
+Suponha que você tenha um arquivo `Calculadora.java` e deseja gerar a documentação:
+
+```sh
+javadoc -d docs Calculadora.java
+```
+
+Após executar o comando, a documentação será gerada na pasta `docs`, e você poderá abrir os arquivos HTML no seu navegador para visualizar a documentação.
+
+### Opções Adicionais
+
+O Javadoc oferece várias opções adicionais para personalizar a geração da documentação. Você pode ver todas as opções disponíveis usando o comando:
+
+```sh
+javadoc -help
+```
+
+Isso exibirá uma lista de todas as opções que você pode usar com o comando `javadoc`.
+
+### Referência
+
+Para mais informações sobre o uso do Javadoc, consulte a [documentação oficial do Javadoc](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html).
+
+## Executando Arquivos Java no Terminal
+
+Para compilar e executar arquivos Java no terminal, siga os passos abaixo:
+
+### Compilando um Arquivo Java
+
+1. **Abra o Terminal**: Navegue até o diretório onde seu arquivo Java está localizado.
+2. **Comando `javac`**: Use o comando `javac` seguido do nome do arquivo Java para compilar o código. Por exemplo, para compilar `MinhaClass.java`, use o comando:
+
+    ```sh
+    javac MinhaClass.java
+    ```
+
+    Isso gerará um arquivo `MinhaClass.class` no mesmo diretório.
+
+### Executando um Arquivo Java
+
+1. **Comando `java`**: Use o comando `java` seguido do nome da classe (sem a extensão `.class`) para executar o programa. Por exemplo, para executar a classe `MinhaClass`, use o comando:
+
+    ```sh
+    java MinhaClass
+    ```
+
+    Isso iniciará a execução do programa e exibirá a saída no terminal.
+
+### Exemplo Completo
+
+Suponha que você tenha um arquivo `MinhaClass.java` com o seguinte conteúdo:
+
+```java
+public class MinhaClass {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
+}
+```
+
+Para compilar e executar este arquivo, siga os passos:
+
+1. Compile o arquivo:
+
+    ```sh
+    javac MinhaClass.java
+    ```
+
+2. Execute o arquivo compilado:
+
+    ```sh
+    java MinhaClass
+    ```
+
+    A saída será:
+
+    ```
+    Olá, Mundo!
+    ```
+
+### Referência
+
+Para mais informações sobre o uso dos comandos `javac` e `java`, consulte a [documentação oficial do Java](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html).
+
+## Principais Comandos do CMD
+
+| Comando       | Descrição                                                                 |
+|---------------|---------------------------------------------------------------------------|
+| `cd`          | Altera o diretório atual.                                                 |
+| `dir`         | Lista os arquivos e diretórios no diretório atual.                        |
+| `copy`        | Copia arquivos de um local para outro.                                    |
+| `move`        | Move arquivos de um local para outro.                                     |
+| `del`         | Exclui arquivos.                                                          |
+| `mkdir`       | Cria um novo diretório.                                                   |
+| `rmdir`       | Remove um diretório vazio.                                                |
+| `cls`         | Limpa a tela do terminal.                                                 |
+| `echo`        | Exibe mensagens ou ativa/desativa a exibição de comandos.                 |
+| `exit`        | Fecha a janela do CMD.                                                    |
+| `ipconfig`    | Exibe informações de configuração de rede.                                |
+| `ping`        | Testa a conectividade com um endereço IP específico.                      |
+| `tasklist`    | Lista todos os processos em execução.                                     |
+| `taskkill`    | Encerra um processo em execução.                                          |
+| `chkdsk`      | Verifica e repara erros no disco.                                         |
+| `sfc`         | Verifica e repara arquivos de sistema corrompidos.                        |
+| `netstat`     | Exibe conexões de rede e estatísticas de protocolo.                       |
+| `shutdown`    | Desliga ou reinicia o computador.                                         |
+| `systeminfo`  | Exibe informações detalhadas sobre a configuração do sistema.             |
+| `help`        | Fornece ajuda sobre comandos do CMD.                                      |
+
+## Wrapper Classes em Java
+
+As Wrapper Classes em Java são usadas para encapsular tipos primitivos em um objeto. Isso permite que os tipos primitivos sejam usados em contextos que requerem objetos, como em coleções do framework Java Collections.
+
+### Tipos de Wrapper Classes
+
+Java fornece uma classe wrapper para cada tipo primitivo:
+
+| Tipo Primitivo | Classe Wrapper |
+|----------------|-----------------|
+| `byte`         | `Byte`          |
+| `short`        | `Short`         |
+| `int`          | `Integer`       |
+| `long`         | `Long`          |
+| `float`        | `Float`         |
+| `double`       | `Double`        |
+| `char`         | `Character`     |
+| `boolean`      | `Boolean`       |
+
+### Autoboxing e Unboxing
+
+- **Autoboxing**: É o processo de conversão automática de um tipo primitivo para o tipo correspondente da classe wrapper.
+- **Unboxing**: É o processo de conversão automática de um objeto da classe wrapper para o tipo primitivo correspondente.
+
+#### Exemplo de Autoboxing
+
+```java
+int num = 10;
+Integer numWrapper = num; // Autoboxing
+```
+
+#### Exemplo de Unboxing
+
+```java
+Integer numWrapper = 10;
+int num = numWrapper; // Unboxing
+```
+
+### Métodos Úteis das Wrapper Classes
+
+As classes wrapper fornecem vários métodos úteis para manipulação e conversão de valores.
+
+#### Exemplo com a Classe `Integer`
+
+```java
+Integer num = Integer.valueOf(10); // Criação de um Integer
+int valor = num.intValue(); // Conversão para int
+String str = num.toString(); // Conversão para String
+int parsed = Integer.parseInt("123"); // Conversão de String para int
+```
+
+### Comparação de Objetos Wrapper
+
+Para comparar objetos das classes wrapper, use o método `.equals()` em vez do operador `==`, que compara referências de memória.
+
+#### Exemplo de Comparação
+
+```java
+Integer num1 = 100;
+Integer num2 = 100;
+
+if (num1.equals(num2)) {
+    System.out.println("Os valores são iguais.");
+} else {
+    System.out.println("Os valores são diferentes.");
+}
+```
+
+### Uso em Coleções
+
+As classes wrapper são frequentemente usadas em coleções, como `ArrayList`, que não suportam tipos primitivos.
+
+#### Exemplo com `ArrayList`
+
+```java
+ArrayList<Integer> lista = new ArrayList<>();
+lista.add(10); // Autoboxing
+int valor = lista.get(0); // Unboxing
+```
+
+### Benefícios das Wrapper Classes
+
+- **Compatibilidade com Coleções**: Permitem o uso de tipos primitivos em coleções.
+- **Métodos Utilitários**: Fornecem métodos para conversão e manipulação de valores.
+- **Imutabilidade**: Objetos das classes wrapper são imutáveis, o que significa que seu valor não pode ser alterado após a criação.
+
+### Considerações de Desempenho
+
+Embora as classes wrapper ofereçam muitos benefícios, elas podem introduzir sobrecarga de desempenho devido à criação de objetos. Use tipos primitivos quando o desempenho for crítico.
+
+### Conclusão
+
+## Wrapper Classes em Java
+
+As Wrapper Classes em Java são usadas para encapsular tipos primitivos em um objeto. Isso permite que os tipos primitivos sejam usados em contextos que requerem objetos, como em coleções do framework Java Collections.
+
+### Tipos de Wrapper Classes
+
+Java fornece uma classe wrapper para cada tipo primitivo:
+
+| Tipo Primitivo | Classe Wrapper |
+|----------------|-----------------|
+| `byte`         | `Byte`          |
+| `short`        | `Short`         |
+| `int`          | `Integer`       |
+| `long`         | `Long`          |
+| `float`        | `Float`         |
+| `double`       | `Double`        |
+| `char`         | `Character`     |
+| `boolean`      | `Boolean`       |
+
+### Autoboxing e Unboxing
+
+- **Autoboxing**: É o processo de conversão automática de um tipo primitivo para o tipo correspondente da classe wrapper.
+- **Unboxing**: É o processo de conversão automática de um objeto da classe wrapper para o tipo primitivo correspondente.
+
+#### Exemplo de Autoboxing
+
+```java
+int num = 10;
+Integer numWrapper = num; // Autoboxing
+```
+
+#### Exemplo de Unboxing
+
+```java
+Integer numWrapper = 10;
+int num = numWrapper; // Unboxing
+```
+
+### Métodos Úteis das Wrapper Classes
+
+As classes wrapper fornecem vários métodos úteis para manipulação e conversão de valores.
+
+#### Exemplo com a Classe `Integer`
+
+```java
+Integer num = Integer.valueOf(10); // Criação de um Integer
+int valor = num.intValue(); // Conversão para int
+String str = num.toString(); // Conversão para String
+int parsed = Integer.parseInt("123"); // Conversão de String para int
+```
+
+### Comparação de Objetos Wrapper
+
+Para comparar objetos das classes wrapper, use o método `.equals()` em vez do operador `==`, que compara referências de memória.
+
+#### Exemplo de Comparação
+
+```java
+Integer num1 = 100;
+Integer num2 = 100;
+
+if (num1.equals(num2)) {
+    System.out.println("Os valores são iguais.");
+} else {
+    System.out.println("Os valores são diferentes.");
+}
+```
+
+### Uso em Coleções
+
+As classes wrapper são frequentemente usadas em coleções, como `ArrayList`, que não suportam tipos primitivos.
+
+#### Exemplo com `ArrayList`
+
+```java
+ArrayList<Integer> lista = new ArrayList<>();
+lista.add(10); // Autoboxing
+int valor = lista.get(0); // Unboxing
+```
+
+### Benefícios das Wrapper Classes
+
+- **Compatibilidade com Coleções**: Permitem o uso de tipos primitivos em coleções.
+- **Métodos Utilitários**: Fornecem métodos para conversão e manipulação de valores.
+- **Imutabilidade**: Objetos das classes wrapper são imutáveis, o que significa que seu valor não pode ser alterado após a criação.
+
+### Considerações de Desempenho
+
+Embora as classes wrapper ofereçam muitos benefícios, elas podem introduzir sobrecarga de desempenho devido à criação de objetos. Use tipos primitivos quando o desempenho for crítico.
+
+### Conclusão
+
+As wrapper classes são uma parte essencial da linguagem Java, permitindo que tipos primitivos sejam tratados como objetos. Elas facilitam a manipulação de dados e a integração com APIs que requerem objetos, ao mesmo tempo em que fornecem métodos utilitários para conversão e manipulação de valores.
+
+## Controle de Fluxo em Java
+
+O controle de fluxo em Java permite que você controle a execução do programa com base em condições e repetições. Ele é dividido em três categorias principais: **estruturas condicionais**, **estruturas de repetição** e **estruturas de interrupção**.
+
+### Estruturas Condicionais
+
+As estruturas condicionais permitem executar diferentes blocos de código com base em condições.
+
+#### `if-else`
+
+A estrutura `if-else` é usada para executar um bloco de código se uma condição for verdadeira e outro bloco se for falsa.
+
+```java
+int idade = 18;
+
+if (idade >= 18) {
+    System.out.println("Maior de idade");
+} else {
+    System.out.println("Menor de idade");
+}
+```
+
+#### `else if`
+
+O `else if` permite verificar múltiplas condições.
+
+```java
+int nota = 85;
+
+if (nota >= 90) {
+    System.out.println("Aprovado com excelência");
+} else if (nota >= 70) {
+    System.out.println("Aprovado");
+} else {
+    System.out.println("Reprovado");
+}
+```
+
+#### `switch`
+
+O `switch` é usado para selecionar um bloco de código a ser executado com base no valor de uma variável.
+
+```java
+int dia = 3;
+
+switch (dia) {
+    case 1:
+        System.out.println("Domingo");
+        break;
+    case 2:
+        System.out.println("Segunda-feira");
+        break;
+    case 3:
+        System.out.println("Terça-feira");
+        break;
+    default:
+        System.out.println("Dia inválido");
+}
+```
+
+### Estruturas de Repetição
+
+As estruturas de repetição permitem executar um bloco de código várias vezes.
+
+#### `for`
+
+O `for` é usado quando o número de iterações é conhecido.
+
+```java
+for (int i = 0; i < 5; i++) {
+    System.out.println("Contagem: " + i);
+}
+```
+
+#### `while`
+
+O `while` é usado quando o número de iterações não é conhecido e depende de uma condição.
+
+```java
+int contador = 0;
+
+while (contador < 5) {
+    System.out.println("Contagem: " + contador);
+    contador++;
+}
+```
+
+#### `do-while`
+
+O `do-while` garante que o bloco de código seja executado pelo menos uma vez.
+
+```java
+int contador = 0;
+
+do {
+    System.out.println("Contagem: " + contador);
+    contador++;
+} while (contador < 5);
+```
+
+### Estruturas de Interrupção
+
+As estruturas de interrupção permitem alterar o fluxo de execução dentro de loops ou `switch`.
+
+#### `break`
+
+O `break` interrompe a execução do loop ou do `switch`.
+
+```java
+for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    System.out.println("Número: " + i);
+}
+```
+
+#### `continue`
+
+O `continue` pula para a próxima iteração do loop.
+
+```java
+for (int i = 0; i < 10; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.println("Número ímpar: " + i);
+}
+```
+
+#### `return`
+
+O `return` encerra a execução de um método e retorna um valor (se aplicável).
+
+```java
+public int soma(int a, int b) {
+    return a + b;
+}
+```
+
+### Boas Práticas
+
+- Use `if-else` para condições simples e `switch` para múltiplos casos.
+- Evite loops infinitos, a menos que sejam intencionais.
+- Sempre use `break` em um `switch` para evitar a execução de casos subsequentes.
+- Prefira `for` quando souber o número de iterações e `while` quando depender de uma condição.
+
+O controle de fluxo é essencial para criar programas dinâmicos e flexíveis, permitindo que você tome decisões e repita ações com base em condições específicas.
