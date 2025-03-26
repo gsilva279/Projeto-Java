@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AnalisandoCandidaturas",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.ControleFluxo.AnalisandoCandidaturas",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "CepInvalidoException",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.EstruturasExepcionais.CepInvalidoException",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "TesteExecao",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.módulo2.EstruturasExepcionais.TesteExecao",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
             "name": "EstruturasRepeticao",
             "request": "launch",
             "mainClass": "edu.bootcampJAVA.módulo2.EstruturasRepeticao",

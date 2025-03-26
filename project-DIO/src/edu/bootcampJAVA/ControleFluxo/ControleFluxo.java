@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2;
+package edu.bootcampJAVA.ControleFluxo;
 
 public class ControleFluxo {
     public static void main(String[] args) {
