@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2.EstruturasExepcionais;
+package EstruturasExepcionais;
 
 public class CepInvalidoException extends Exception {
     public static void main(String[] args) {

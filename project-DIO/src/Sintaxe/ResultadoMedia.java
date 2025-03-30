@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2;
+package Sintaxe;
 
 public class ResultadoMedia {
     public static void main(String[] args) {

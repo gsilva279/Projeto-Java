@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ProcessoSetivo",
+            "request": "launch",
+            "mainClass": "ControleFluxo.ProcessoSetivo",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Teste",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.ControleFluxo.Teste",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "ProcessoSetivo",
+            "request": "launch",
+            "mainClass": "edu.bootcampJAVA.ControleFluxo.ProcessoSetivo",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
             "name": "AnalisandoCandidaturas",
             "request": "launch",
             "mainClass": "edu.bootcampJAVA.ControleFluxo.AnalisandoCandidaturas",

@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.DebuggingJava;
+package DebuggingJava;
 
 public class Debugging {
     public static void main(String[] args) {

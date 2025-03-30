@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2;
+package Sintaxe;
 
 public class TerminalClass {
     /**

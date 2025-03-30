@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2.EstruturasExepcionais;
+package EstruturasExepcionais;
 import java.util.Scanner;
 public class TesteExecao {
     public static void main(String[] args) {

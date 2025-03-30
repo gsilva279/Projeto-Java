@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2.exercicioMetodos;
+package exercicioMetodos;
 
 public class SmartTv {
     // Exercitando

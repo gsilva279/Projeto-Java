@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2;
+package Sintaxe;
 /**
  * <h1>Calculadora</h1>
  * <p> A Class calculadora reliza operações de soma, subtração, multiplicação e divisão.</p>

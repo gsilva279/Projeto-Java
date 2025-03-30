@@ -1,4 +1,4 @@
-package edu.bootcampJAVA.módulo2;
+package Sintaxe;
 
 import java.util.Scanner;
 import java.util.Locale;
