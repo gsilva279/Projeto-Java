@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "main",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
             "name": "ProcessoSetivo",
             "request": "launch",
             "mainClass": "ControleFluxo.ProcessoSetivo",
