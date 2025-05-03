@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cliente",
+            "request": "launch",
+            "mainClass": "PilaresPOO.SistemaPagamento.Cliente",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Estabelecimento",
+            "request": "launch",
+            "mainClass": "PilaresPOO.PetShop.Estabelecimento.Estabelecimento",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "TesteEnuns",
+            "request": "launch",
+            "mainClass": "POO.TesteEnuns",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Construtores",
+            "request": "launch",
+            "mainClass": "POO.Construtores",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "GetAndSet",
+            "request": "launch",
+            "mainClass": "POO.GetAndSet",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Modificadores",
+            "request": "launch",
+            "mainClass": "POO.Modificadores",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
             "name": "main",
             "request": "launch",
             "mainClass": "main",

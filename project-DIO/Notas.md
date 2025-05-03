@@ -1,5 +1,5 @@
 # NOTAS DO CÓDIGO
-
+ <p>Este arquivo contém notas relativas ao bootcamp Java Cloud Native.</p>
 ```java
 public class MinhaClass {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class MinhaClass {
         return "Resultado do método " + primeiroNome.concat(" ").concat(segundoNome);
     }
 }
-```
+``
 
 ## Tipos e Variáveis em Java
 
@@ -1057,3 +1057,435 @@ public int soma(int a, int b) {
 - Prefira `for` quando souber o número de iterações e `while` quando depender de uma condição.
 
 O controle de fluxo é essencial para criar programas dinâmicos e flexíveis, permitindo que você tome decisões e repita ações com base em condições específicas.
+
+# Exceções em Java
+
+## O que são Exceções?
+
+Exceções são eventos que ocorrem durante a execução de um programa que interrompem o fluxo normal das instruções. Elas podem ser causadas por erros de programação, problemas de entrada/saída, ou condições inesperadas que ocorrem durante a execução.
+
+## Tipos de Exceções
+
+As exceções em Java podem ser classificadas em duas categorias principais:
+
+1. **Exceções Verificadas (Checked Exceptions)**:
+   - São exceções que o compilador exige que sejam tratadas. Se um método pode lançar uma exceção verificada, ele deve declarar isso em sua assinatura usando a palavra-chave `throws`.
+   - Exemplo: `IOException`, `SQLException`.
+
+2. **Exceções Não Verificadas (Unchecked Exceptions)**:
+   - São exceções que não precisam ser declaradas ou tratadas. Elas geralmente indicam erros de programação, como acessar um índice fora dos limites de um array.
+   - Exemplo: `NullPointerException`, `ArrayIndexOutOfBoundsException`, `ArithmeticException`.
+
+## Estrutura de Tratamento de Exceções
+
+O tratamento de exceções em Java é feito usando os blocos `try`, `catch`, `finally` e `throw`.
+
+### Bloco `try`
+
+O bloco `try` contém o código que pode gerar uma exceção. Se uma exceção ocorrer, o fluxo de controle é transferido para o bloco `catch`.
+
+```java
+try {
+    // Código que pode gerar uma exceção
+} catch (TipoDaExcecao e) {
+    // Código para tratar a exceção
+}
+```
+
+# POO (Programação orientada a objetos)
+
+## Modificadores de acesso
+
+Em Java, os **modificadores de acesso** controlam a visibilidade de atributos, métodos e classes. Eles determinam quem pode acessar determinada parte do código.
+
+* `public:` Este é o mais permissivo de todos. Quando você declara um membro (uma classe, método ou variável) como public, ele pode ser acessado de qualquer lugar do seu programa e até mesmo de outros programas que utilizam o seu código. É como uma porta completamente aberta.
+
+* `protected`: Este modificador oferece um nível de acesso um pouco mais restrito. Membros protected podem ser acessados dentro da mesma classe, por classes no mesmo pacote e por subclasses (classes que herdam da classe original), mesmo que estejam em pacotes diferentes. Imagine uma área restrita dentro de um prédio, acessível aos funcionários e seus familiares.
+
+* `private`: Este é o modificador mais restritivo. Membros private só podem ser acessados dentro da própria classe onde foram declarados. Nenhuma outra classe, nem mesmo subclasses ou classes no mesmo pacote, podem acessá-los diretamente. É como um cofre pessoal dentro de um apartamento.
+
+## 🛡️ Tipos de Modificadores de Acesso
+
+| Modificador     | Visível para...                              | Palavra-chave  | Exemplo                        |
+|----------------|-----------------------------------------------|----------------|--------------------------------|
+| `public`       | Todas as classes                              | `public`       | `public class MinhaClasse`     |
+| `protected`    | Mesmo pacote e subclasses                     | `protected`    | `protected int idade;`         |
+| *default*      | (sem modificador) Apenas no mesmo pacote      | *(nenhuma)*    | `int idade;`                   |
+| `private`      | Somente dentro da mesma classe                | `private`      | `private String nome;`         |
+
+---
+
+## 🧩 Exemplos práticos
+
+```java
+1. Public
+public class Pessoa {
+    public String nome;
+
+    public void falar() {
+        System.out.println("Olá!");
+    }
+}
+Qualquer outra classe pode acessar nome e falar().
+
+2. Private
+public class Pessoa {
+    private String senha;
+
+    private void mostrarSenha() {
+        System.out.println(senha);
+    }
+}
+Apenas a própria classe Pessoa pode acessar senha e mostrarSenha().
+
+3. Protected
+public class Pessoa {
+    protected int idade;
+}
+Classes no mesmo pacote e subclasses (mesmo em pacotes diferentes) podem acessar idade.
+
+4. Default
+class Pessoa {
+    String nome;
+}
+Atributo nome acessível somente por classes no mesmo pacote.
+```
+
+## Getter e Setters
+
+# Getters e Setters em Java
+
+## 🧠 O que são?
+
+**Getters** são métodos usados para obter o valor de um atributo.  
+**Setters** são métodos usados para definir (alterar) o valor de um atributo.
+
+Eles são muito utilizados quando os atributos da classe são `private`, ou seja, não podem ser acessados diretamente por outras classes.
+
+---
+
+## 🔒 Exemplo com Encapsulamento
+
+``` java
+
+public class Pessoa {
+    private String nome;
+    private int idade;
+
+    // Getter para 'nome'
+    public String getNome() {
+        return nome;
+    }
+
+    // Setter para 'nome'
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    // Getter para 'idade'
+    public int getIdade() {
+        return idade;
+    }
+
+    // Setter para 'idade'
+    public void setIdade(int idade) {
+        if (idade >= 0) {
+            this.idade = idade;
+        }
+    }
+}
+```
+
+## Uso da Palavra-chave `this` em Java
+
+Em Java, `this` é uma **referência para o próprio objeto atual**.  
+Ela é usada principalmente para diferenciar entre **atributos da classe** e **parâmetros do método ou construtor** com o mesmo nome.
+
+# Construtores em Java
+
+## 🧠 O que é um Construtor?
+
+Um **construtor** é um método especial usado para criar e inicializar objetos em Java.  
+Ele tem o **mesmo nome da classe** e **não tem tipo de retorno** (nem `void`).
+
+---
+
+## 🛠️ Características dos Construtores
+
+- Têm o mesmo nome da classe.
+- Não possuem tipo de retorno.
+- Podem ser **sobrecarregados** (vários construtores com diferentes parâmetros).
+- Se nenhum construtor for definido, o Java cria um **construtor padrão** automaticamente (sem parâmetros).
+
+---
+
+## 🧩 Exemplo de Construtor Simples
+
+```java
+public class Pessoa {
+    private String nome;
+
+    // Construtor
+    public Pessoa(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+}
+```
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        Pessoa p1 = new Pessoa("João");
+        System.out.println(p1.getNome());  // Saída: João
+    }
+```
+
+# Enums em Java
+
+## 🧠 O que é um `enum`?
+
+Um `enum` (abreviação de *enumeration*) é um tipo especial de classe em Java que representa um **conjunto fixo de constantes**. Ele é usado quando você tem um número **limitado e conhecido** de valores possíveis.
+
+---
+
+## 🧾 Sintaxe Básica
+
+```java
+public enum DiaDaSemana {
+    SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO;
+}
+```
+
+## 🔁Enum com Switch
+```java
+switch (hoje) {
+    case SEGUNDA:
+        System.out.println("Reunião semanal");
+        break;
+    case SEXTA:
+        System.out.println("Planejamento de fim de semana");
+        break;
+    default:
+        System.out.println("Dia comum");
+}
+```
+
+## ⚙️Enum com Atributos e Métodos
+
+```java
+public enum Estado {
+    PARAIBA("Paraíba", "PB"),
+    PERNAMBUCO("Pernambuco", "PE"),
+    MINAS_GERAIS("Minas Gerais", "MG");
+
+    private final String nome;
+    private final String sigla;
+
+    Estado(String nome, String sigla) {
+        this.nome = nome;
+        this.sigla = sigla;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getSigla() {
+        return sigla;
+    }
+}
+```
+
+## 🔥Exemplo: Enum com Lógica Personalizada
+
+```java
+public enum Prioridade {
+    BAIXA(1, "Pouco urgente"),
+    MEDIA(2, "Moderadamente urgente"),
+    ALTA(3, "Muito urgente");
+
+    private final int nivel;
+    private final String descricao;
+
+    Prioridade(int nivel, String descricao) {
+        this.nivel = nivel;
+        this.descricao = descricao;
+    }
+
+    public int getNivel() {
+        return nivel;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public boolean isAltaPrioridade() {
+        return this == ALTA;
+    }
+}
+```
+
+## 🎯 Métodos úteis com Enum
+- .name() → retorna o nome da constante ("ALTA")
+
+- .ordinal() → retorna o índice (posição) da constante (começa em 0)
+
+- .values() → retorna um array com todas as constantes
+
+```java
+for (Prioridade p : Prioridade.values()) {
+    System.out.println(p.name() + " - " + p.getDescricao());
+}
+```
+
+## 📌Enum com Construtores e POO
+Você pode combinar enums com classes, métodos, construtores e até usar com POO:
+
+```java
+public class Tarefa {
+    private String titulo;
+    private Prioridade prioridade;
+
+    public Tarefa(String titulo, Prioridade prioridade) {
+        this.titulo = titulo;
+        this.prioridade = prioridade;
+    }
+
+    public void exibir() {
+        System.out.println(titulo + " - " + prioridade.getDescricao());
+    }
+}
+```
+
+## ✅Conclusão
+
+- Enums em Java:
+- Tornam o código mais seguro e legível.
+- Substituem valores mágicos ("ALTA", "BAIXA" etc).
+- Permitem encapsular dados e comportamentos.
+- São ideais para estruturas fixas e padronizadas.
+
+
+# Pilares da Programação Orientada a Objetos (POO)
+
+A Programação Orientada a Objetos é um paradigma de programação que utiliza "objetos" para representar dados e métodos. Os quatro pilares fundamentais da POO são:
+
+## 1. Abstração
+A abstração é o processo de ocultar os detalhes complexos e mostrar apenas as características essenciais de um objeto. Isso permite que os desenvolvedores se concentrem no que um objeto faz em vez de como ele faz.
+
+### Exemplo:
+```java
+class Livro {
+    private String titulo;
+    private String autor;
+    private String isbn;
+
+    public Livro(String titulo, String autor, String isbn) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.isbn = isbn;
+    }
+
+    public void mostrarInfo() {
+        System.out.println(titulo + " - " + autor);
+    }
+}
+```
+
+## 2. Encapsulamento
+O encapsulamento é uma prática de restringir o acesso a certos componentes de um objeto e proteger o estado interno do objeto. Isso é feito através de modificadores de acesso (como private, protectede public), que controlam a visibilidade dos atributos e métodos.
+
+Exemplo:
+```Java
+class ContaBancaria {
+    private double saldo; // atributo privado
+
+    public ContaBancaria() {
+        this.saldo = 0;
+    }
+
+    public void depositar(double valor) {
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+
+    public void sacar(double valor) {
+        if (valor > 0 && valor <= saldo) {
+            saldo -= valor;
+        }
+    }
+
+    public void mostrarSaldo() {
+        System.out.println("Saldo: R$" + saldo);
+    }
+} 
+```
+
+## 3. Herança
+A herança permite que uma classe (filha) herde atributos e métodos de outra classe (pai). Isso promove uma reutilização de código.
+
+Exemplo:
+```Java
+class Animal {
+    public void comer() {
+        System.out.println("Comendo...");
+    }
+}
+
+class Cachorro extends Animal {
+    public void latir() {
+        System.out.println("Au Au!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Cachorro dog = new Cachorro();
+        dog.comer(); // Herdado da classe Animal
+        dog.latir(); // Método específico de Cachorro
+    }
+}
+```
+
+## 4. Polimorfismo
+O polimorfismo permite que diferentes classes implementem métodos com o mesmo nome de forma diferente.
+
+Exemplo:
+```Java
+class Animal {
+    public void fazerSom() {
+        // Método vazio
+    }
+}
+
+class Cachorro extends Animal {
+    public void fazerSom() {
+        System.out.println("Latido");
+    }
+}
+
+class Gato extends Animal {
+    public void fazerSom() {
+        System.out.println("Miau");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal[] animais = { new Cachorro(), new Gato() };
+
+        for (Animal animal : animais) {
+            animal.fazerSom(); // Chama o método apropriado
+        }
+    }
+}
+```
+
+## Conclusão
+Os quatro pilares do POO — Abstração, Encapsulação, Herança e Polimorfismo — são fundamentais para a construção de sistemas de software robustos, reutilizáveis ​​e simples de manter. Compreender e aplicar esses conceitos é essencial para qualquer desenvolvedor que trabalhe com programação orientada a objetos.
