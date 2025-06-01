@@ -6,6 +6,76 @@
     "configurations": [
         {
             "type": "java",
+            "name": "QuestaoTres",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoTres",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoDois",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoDois",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoUm",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoUm",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "ExemploConsumer",
+            "request": "launch",
+            "mainClass": "InterfacesAndLambda.ExemploConsumer",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "VerificadorPar",
+            "request": "launch",
+            "mainClass": "InterfacesAndLambda.VerificadorPar",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "ExemploMsg",
+            "request": "launch",
+            "mainClass": "InterfacesAndLambda.ExemploMsg",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Cat",
+            "request": "launch",
+            "mainClass": "ClassesSeladas.Cat",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Dog",
+            "request": "launch",
+            "mainClass": "ClassesSeladas.Dog",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Maria",
+            "request": "launch",
+            "mainClass": "Record.Maria",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "Horas",
+            "request": "launch",
+            "mainClass": "Horas.Horas",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
             "name": "Cliente",
             "request": "launch",
             "mainClass": "PilaresPOO.SistemaPagamento.Cliente",
