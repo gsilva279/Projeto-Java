@@ -6,6 +6,76 @@
     "configurations": [
         {
             "type": "java",
+            "name": "OrdenacaoNumeros",
+            "request": "launch",
+            "mainClass": "JavaCollection.List.OrdenacaoNumeros.OrdenacaoNumeros",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoDez",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoDez",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "SomaNumeros",
+            "request": "launch",
+            "mainClass": "JavaCollection.List.SomaNumeros.SomaNumeros",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "CarrinhoCompras",
+            "request": "launch",
+            "mainClass": "JavaCollection.List.CarrinhoCompras.CarrinhoCompras",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoOito",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoOito",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoNove",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoNove",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoSete",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoSete",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoSeis",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoSeis",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoCinco",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoCinco",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
+            "name": "QuestaoQuatro",
+            "request": "launch",
+            "mainClass": "Arrays.QuestaoQuatro",
+            "projectName": "project-DIO_5323cb20"
+        },
+        {
+            "type": "java",
             "name": "QuestaoTres",
             "request": "launch",
             "mainClass": "Arrays.QuestaoTres",

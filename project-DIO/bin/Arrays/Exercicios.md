@@ -19,7 +19,7 @@
   - O maior valor.
   - O menor valor.
 
-## 🔄 Exercício 4 — Invertendo um array
+## 🔄 Exercício 4 — Invertendo um array -- rever!
 
 - Crie um array com 6 números.
 - Mostre os números na ordem inversa.
