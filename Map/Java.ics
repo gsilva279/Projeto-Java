@@ -1,0 +1,26 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Learn from Java Roadmap - roadmap.sh
+DESCRIPTION:Learn from the Java roadmap on roadmap.sh
+
+Visit the roadmap at https://roadmap.sh/java
+LOCATION:https://roadmap.sh/java
+DTSTART:20250914T023057Z
+DTEND:20250914T033057Z
+RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR
+
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Learn from Java Roadmap - roadmap.sh starts in 30 minutes
+END:VALARM
+
+BEGIN:VALARM
+TRIGGER:-PT15M
+ACTION:DISPLAY
+DESCRIPTION:Reminder: Learn from Java Roadmap - roadmap.sh starts in 15 minutes
+END:VALARM
+
+END:VEVENT
+END:VCALENDAR
