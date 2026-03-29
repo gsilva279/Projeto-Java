@@ -3,6 +3,7 @@ package StreamAPI.Exercicios;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collector;
 
 public class Desafio10 {
     public static void main(String[] args) {
@@ -11,7 +12,11 @@ public class Desafio10 {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 3);
         //Agrupar valores ímpares multiplos de 3 ou de 5 ((n*3 && n*5 || n/3 && n/5) && n%2 !== 0)
 
-        //exibir
+        List<Integer> mult = numeros.stream()
+        .filter( n -> n % 2 != 0 )
+        .collect(Collector.toList());
+
+    
 
 
     }

@@ -12,14 +12,15 @@ public class Desafio09 {
         List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 6, 7, 8, 9, 10, 5, 2, 4);
 
         // // Verifica se a quantidade de elementos é igual à quantidade após distinct()
-        boolean NaoRepetem = numeros.size() == numeros.stream().distinct().count();
+        boolean NaoRepetem = numeros.size() == numeros.stream()
+                .distinct()
+                .count();
 
         if (NaoRepetem) {
             System.out.println("Todos os números são distintos");
         } else {
             System.out.println("Algum número é repetido");
         }
-        
 
     }
 }

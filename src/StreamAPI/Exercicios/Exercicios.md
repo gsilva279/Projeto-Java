@@ -1,4 +1,4 @@
-ç# Stream API Java - Principais Métodos
+# Stream API Java - Principais Métodos
 
 Vamos praticar e aprofundar nossos conhecimentos na poderosa Stream API do Java!
 Abaixo, apresentamos uma lista de desafios envolvendo operações com streams para exercitar suas habilidades e criatividade.
